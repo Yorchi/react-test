@@ -1,6 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
@@ -18,7 +23,22 @@ function App() {
         >
           Learn React
         </a>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/users">Users</Link>
+      <Switch>
+        <Route path="/about">
+         <h1>bout</h1>
+        </Route>
+        <Route path="/users">
+         <h1>users</h1>
+        </Route>
+        <Route path="/">
+          <h1>home</h1>
+        </Route>
+      </Switch>
       </header>
+
     </div>
   );
 }
